@@ -60,4 +60,4 @@
 #     # password: "please use keys"
 #   }
 
-server '<Elastic IP>', user: 'ec2-user', roles: %w{app db web}
+server '54.250.236.31', user: 'ec2-user', roles: %w{app db web}
