@@ -1,0 +1,33 @@
+/*
+  テーブル
+*/
+
+/* テーブル名 */
+.table_name{
+  font-size: 20px;
+  margin-top: 10px;
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+/* テーブルの枠 */
+table th ,td {
+  border:1px solid;
+  }
+   
+/* スクロールバーの実装 */
+.table_sticky {
+  display: block;
+  overflow-y: scroll;
+  height: calc(100% - 130px);
+  border-collapse: collapse;
+  margin: 20px 10px;
+}
+.table_sticky thead th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: #79E2F2;
+  border-top:#FFFFFF;
+  border:1px solid;
+}
