@@ -1,0 +1,6 @@
+<% if user_signed_in? %>
+  <%= render partial: "shared/country_table", locals: { countries_statuses: @countries_statuses, user: current_user } %>
+<% else %>
+  ログイン後、マイページを編集することが可能です
+<% end %>
+
