@@ -8,6 +8,7 @@
 
 
 # Countryモデルの初期値
+puts "Seeding countries..."
 countries = Country.create!([
   {country_name: "日本", classification: "アジア"},
   {country_name: "インド", classification: "アジア"},
@@ -209,3 +210,4 @@ countries = Country.create!([
   {country_name: "ルワンダ", classification: "アフリカ"},
   {country_name: "レソト", classification: "アフリカ"},
 ])
+puts "done"
