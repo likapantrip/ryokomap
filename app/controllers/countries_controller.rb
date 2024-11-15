@@ -12,8 +12,7 @@ class CountriesController < ApplicationController
           )
         end
       end
-
-      @countries_statuses = CountryStatus.includes(:user, :country).where(user_id: @user.id)
+      redirect_to user_path(@user.id)
     end
   end
 end
