@@ -1,0 +1,28 @@
+<%# CSS・・・assets/stylesheets/common/table.css %>
+  <div class="table_name"><%= @user.user_name %>さんの国一覧</div>
+  <div class="form_alert"><%= alert %></div>
+  <table class="table_sticky">
+    <thead>
+      <tr>
+        <th>区分</th>
+        <th>国名</th>
+        <th>ステータス</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= form_with model: @countries, url: user_country_path, method: :patch do |form| %>
+        <div class="form_update-button"><%= form.submit "ステータスを更新" %></div>
+        <% @countries.each do |country| %>
+          <%= form.fields_for "countries[#{country.id}]", country do |country_form| %>
+            <tr>
+              <td><%= country.country.classification %></td>
+              <td><%= country.country.country_name %></td>
+              <td><%= country_form.collection_select(:status_id, Status.all, :id, :status, {selected: country.status_id}, {class:"form_pulldown"}) %></td>
+            </tr>
+          <% end %>
+        <% end %>
+      <% end %>
+    </tbody>
+    <tfoot></tfoot>
+  </table>
+<%# CSS・・・assets/stylesheets/common/table.css %>
