@@ -18,7 +18,6 @@ class CountriesController < ApplicationController
       country_id = c.to_s
       params_country = params.require(:"country_status").require(:"countries").require(country_id).permit(:status_id)
       country_data = CountryStatus.find_by(user_id: params[:user_id], country_id: country_id)
-      binding.pry
 
       # データを更新
       if country_data.update(params_country) == false
