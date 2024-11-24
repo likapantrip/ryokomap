@@ -31,3 +31,21 @@ table th ,td {
   border-top:#FFFFFF;
   border:1px solid;
 }
+
+/*
+  編集画面
+*/
+
+/* アラート */
+.form_alert{
+  margin-left: 10px;
+  color: red;
+}
+
+/* 更新ボタン */
+.form_update-button{
+  margin-left: 10px;
+}
+
+/* プルダウン */
+.form_pulldown{}

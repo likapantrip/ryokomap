@@ -1,1 +1,22 @@
-ログイン後、マイページを編集することが可能です
+<%# CSS・・・assets/stylesheets/common/table.css %>
+<div class="table_name"><%= @user.user_name %>さんの国一覧</div>
+<table class="table_sticky">
+  <thead>
+    <tr>
+      <th>区分</th>
+      <th>国名</th>
+      <th>ステータス</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @countries.each do |country| %>
+    <tr>
+      <td><%= country.country.classification %></td>
+      <td><%= country.country.country_name %></td>
+      <td><%= country.status.status %></td>
+    </tr>
+  <% end %>
+  </tbody>
+  <tfoot></tfoot>
+</table>
+<%# CSS・・・assets/stylesheets/common/table.css %>
