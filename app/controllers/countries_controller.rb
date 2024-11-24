@@ -8,24 +8,32 @@ class CountriesController < ApplicationController
   end
 
   def update
-    # ユーザーのステータス件数を取得
+    # ステータス件数を取得(更新回数)
     get_countries
     count = @countries.count
     
     count.times do |c|
-      # 更新対象+パラメーターから値を取得
+      # 更新するcountry_idを取得
       c += 1
-      country_id = c.to_s
-      params_country = params.require(:"country_status").require(:"countries").require(country_id).permit(:status_id)
-      country_data = CountryStatus.find_by(user_id: params[:user_id], country_id: country_id)
+      c_id = c.to_s
 
+      # 更新対象を取得
+      country_data = CountryStatus.where(user_id: params[:user_id], country_id: c_id)
+
+      # パラメーターから値を取得
+      params_country = params.require(:"country_status").require(:"countries").require(country_data.to_a[0].id.to_s).permit(:status_id)
+      
       # データを更新
-      if country_data.update(params_country) == false
-        flash[:alert] = "データ更新が失敗しました"
+      country_data.update!(status_id: params_country[:status_id])
+
+      # データ更新に失敗した場合
+      rescue ActiveRecord::RecordInvalid => e
+        flash[:alert] = "#{e.record.errors.full_messages} ※#{Country.find(e.record.country_id).country_name}以降のデータは更新されていません"
         redirect_to user_edit_country_path
         return
-      end
     end
+
+    # 全件更新成功した場合
     redirect_to root_path
   end
 
