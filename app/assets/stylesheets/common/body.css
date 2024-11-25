@@ -82,3 +82,25 @@
   height: 70px;
   background-color: #01B7D6;
 }
+
+.footer_menu{
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.footer_menu-button{
+  border-radius: 50% 50% 50% 50%;
+  border: solid #000000;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer_menu-button-image{
+  height: 35px;
+  width: 35px;
+}
