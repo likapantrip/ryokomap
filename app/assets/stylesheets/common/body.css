@@ -73,6 +73,16 @@
   color: #000000;
 }
 
+/* フッター機能だが、要素はmainに配置 */
+#footer_copy-link-message{
+  background-color: #00DC5F;
+  color: #ffffff;
+  border-radius: 5px 5px 5px 5px;
+  margin-left: 10px;
+  width: 200px;
+  text-align: center;
+}
+
 /*
   footer
 */
