@@ -1,4 +1,5 @@
 class CountriesController < ApplicationController
+  before_action :move_to_index, except: :index
   def index
     get_countries
   end
@@ -42,5 +43,12 @@ class CountriesController < ApplicationController
   def get_countries
     @user = User.find(params[:user_id])
     @countries = CountryStatus.includes(:user, :country).where(user_id: params[:user_id])
+  end
+
+  def move_to_index
+    # ログアウトユーザー or 本人以外 の場合、indexに画面遷移
+    if current_user.nil? || params[:user_id].to_i != current_user.id
+      redirect_to user_countries_path(params[:user_id])
+    end
   end
 end
