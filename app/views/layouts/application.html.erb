@@ -45,7 +45,7 @@
             </div>
             <div class="footer_menu-button">
               <% if user_signed_in? %>
-                <%= link_to image_tag("icon_edit.svg", class: "footer_menu-button-image"), user_edit_country_path(current_user) %>
+                <%= link_to image_tag("icon_edit.svg", class: "footer_menu-button-image"), user_edit_country_path(params[:user_id]) %>
               <% else %>
                 <%= link_to image_tag("icon_edit.svg", class: "footer_menu-button-image"), root_path %>
               <% end %>
