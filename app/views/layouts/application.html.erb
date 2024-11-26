@@ -44,10 +44,10 @@
               <div id="footer_copy-link-url" class="hidden" ><%= @url %></div>
             </div>
             <div class="footer_menu-button">
-              <% if user_signed_in? %>
-                <%= link_to image_tag("icon_edit.svg", class: "footer_menu-button-image"), user_edit_country_path(params[:user_id]) %>
-              <% else %>
+              <% if params[:user_id].nil? %>
                 <%= link_to image_tag("icon_edit.svg", class: "footer_menu-button-image"), root_path %>
+              <% else %>
+                <%= link_to image_tag("icon_edit.svg", class: "footer_menu-button-image"), user_edit_country_path(params[:user_id]) %>
               <% end %>
             </div>
             <div class="footer_menu-button">
