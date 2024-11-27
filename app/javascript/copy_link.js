@@ -10,10 +10,10 @@ function copy_link (){
   console.log(copyLink) // 本番環境不具合のため、追記。不具合解消後に行削除
   console.log("変数copyLink取得") // 本番環境不具合のため、追記。不具合解消後に行削除
   
-  if(copyIcon){
+  if (copyIcon) {
     copyIcon.addEventListener('click', () => {
       console.log("クリックイベント発火") // 本番環境不具合のため、追記。不具合解消後に行削除
-      try{
+      try {
         console.log("try文の開始") // 本番環境不具合のため、追記。不具合解消後に行削除
         // クリップボードにコピー
         navigator.clipboard.writeText(copyLink)
@@ -33,8 +33,13 @@ function copy_link (){
           }, 2000); // メッセージを2秒後に非表示
           console.log("コピー成功したので、メッセージ表示済み") // 本番環境不具合のため、追記。不具合解消後に行削除
         }
-      }catch{
-        alert('URLリンクのコピーに失敗しました');
+      } catch(e) {
+        console.log("tryでエラー発生したので、catch開始") // 本番環境不具合のため、追記。不具合解消後に行削除
+        // エラーメッセージを取得
+        const errorMessage = e.message
+        
+        // エラーメッセージを表示
+        alert('URLリンクのコピーに失敗しました。'+errorMessage);
         console.log("tryでエラー発生したので、アラート表示済み") // 本番環境不具合のため、追記。不具合解消後に行削除
       }
     })
