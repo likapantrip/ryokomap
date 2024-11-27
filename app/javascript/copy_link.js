@@ -14,6 +14,7 @@ function copy_link (){
     copyIcon.addEventListener('click', () => {
       console.log("クリックイベント発火") // 本番環境不具合のため、追記。不具合解消後に行削除
       try{
+        console.log("try文の開始") // 本番環境不具合のため、追記。不具合解消後に行削除
         // クリップボードにコピー
         navigator.clipboard.writeText(copyLink)
         console.log("クリップボードにURLをコピー") // 本番環境不具合のため、追記。不具合解消後に行削除
