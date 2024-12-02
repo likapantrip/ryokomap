@@ -16,8 +16,9 @@ https://ryokomap.onrender.com
 - メールアドレス：test2@test.com
 - パスワード：111111
 
-上記以外のユーザーを新規作成いただいて問題ありません。
-ただし、定期的にDBを再作成によりデータが削除される可能性がある点はご了承ください。
+## その他のユーザー
+上記以外のユーザーを新規作成いただいて問題ありません。</br>
+定期的にDB再作成するため、データが削除される可能性がある点はご了承ください。
 
 # 利用方法
 ## ユーザー登録
@@ -26,8 +27,8 @@ https://ryokomap.onrender.com
 3. 「新規登録」ボタンをクリックする
 
 ## ステータス更新
-1. 編集アイコンをクリックし、各国のステータスを変更
-2. 「ステータスを更新」ボタンをクリックし、ステータスを保存
+1. 編集アイコンをクリックし、各国のステータスを変更する
+2. 「ステータスを更新」ボタンをクリックし、ステータスを保存する
 
 ## 一覧表示
 1. 既存ユーザーからURLリンクを受領する
@@ -112,13 +113,13 @@ https://ryokomap.onrender.com
 - タスク管理
 
 # ローカルでの動作方法
-以下のコマンドをターミナルで順に実行。
-% git clone https://github.com/likapantrip/ryokomap.git
-% cd ryokomap
-% bundle install
-% rails db:create
-% rails db:migrate
-% rails db:seed
+以下のコマンドをターミナルで順に実行。</br>
+% git clone https://github.com/likapantrip/ryokomap.git</br>
+% cd ryokomap</br>
+% bundle install</br>
+% rails db:create</br>
+% rails db:migrate</br>
+% rails db:seed</br>
 % rails s
 
 # 工夫したポイント
