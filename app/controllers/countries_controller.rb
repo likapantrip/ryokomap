@@ -42,7 +42,7 @@ class CountriesController < ApplicationController
 
   def get_countries
     @user = User.find(params[:user_id])
-    @countries = CountryStatus.includes(:user, :country).where(user_id: params[:user_id])
+    @countries = CountryStatus.includes(:user, :country).where(user_id: params[:user_id]).order("created_at ASC")
   end
 
   def move_to_index
